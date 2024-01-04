@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "https://dnc-desafio5-library-back.vercel.app/"
+const BASE_URL = "https://dnc-desafio5-library-back.vercel.app"
 
 export class LivrosService{
     static getLivros(){

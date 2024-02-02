@@ -25,7 +25,7 @@ const LivrosEdicao = () => {
       }
     if(livro.id!=undefined && livro.id!='' && livro.titulo!=undefined && livro.titulo!='' && livro.num_paginas!=undefined && livro.num_paginas!='' && livro.isbn !=undefined && livro.isbn !='' && livro.editora !=undefined && livro.editora !=''){
       await LivrosService.updateLivro(Number(livro.id),body)
-      .then((response) => {
+      .then(() => {
         alert('Livro editado com sucesso!')
       })
       .catch(({response:{data,status}})=>{
@@ -68,7 +68,8 @@ const LivrosEdicao = () => {
               <input type="text"  required onChange={(event)=>{ setLivro({...livro, editora: event.target.value})}} value={livro.editora || ''}></input>
             </div> 
             <div className='form-group'>
-              <button onClick={()=>{
+              <button onClick={(e)=>{
+              e.preventDefault()
               editLivro()
             }}>Atualizar Livro</button>  
             </div>                   
